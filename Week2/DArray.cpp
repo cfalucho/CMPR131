@@ -51,29 +51,33 @@ void DArray::replaceElementAt(int newElement, int idx) const{
     a[idx] = newElement;
 }
 bool DArray::compareArrays(const DArray& otherArray) const{    
-    int numOfElements = otherArray.numOfElements;
-    return (a[0] == otherArray.a[0] &&
-            this->numOfElements == numOfElements);
+    if (numOfElements != otherArray.numOfElements)
+    {
+        return false;
+    }   
+    else{
+        for (int i = 0; i < numOfElements; i++)
+        {
+            if (a[i] != otherArray.a[i])
+            {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 bool DArray::isSorted() const{
-    int valueSorted = 0;
     for (int asce = 0, desc = 1; asce < numOfElements - 1; asce++, desc++)
     {
-        if (a[asce] <= a[asce + 1] && a[numOfElements - 1] - desc <= a[numOfElements - 1] - asce)
+        if (a[asce] <= a[asce + 1] || a[numOfElements - 1 - desc] <= a[numOfElements - 1 - asce])
         {
-            valueSorted += 1;
+            continue;
         }
         else{
             return false;
         }
     }
-    // Checks if all values sorted equals number of elements
-    // in the array
-    if (valueSorted == numOfElements - 1)
-    {
-        return true;
-    }
-    return false;
+    return true;
 }
 DArray::DArray(const DArray& otherArray){
     capacity = otherArray.capacity;
@@ -98,13 +102,16 @@ DArray& DArray::operator=(const DArray& rightSide){
     return *this;
 }
 ostream& operator<<(ostream& out, const DArray& myArray){
+    out << "[";
     for (int i = 0; i < myArray.numOfElements; i++)
     {
-        out << myArray.a[i] << " ";
+        out << myArray.a[i];
+        if (i != myArray.numOfElements - 1)
+        {
+            out << ",";
+        }
     }
-    out << "\n";
-    // out << "Capacity: " << myArray.capacity << "\n";
-    // out << "# of elements: " << myArray.numOfElements << "\n";
+    out << "]\n";  
     return out;
 }
 int DArray::findElement(const int& key){

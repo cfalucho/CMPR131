@@ -17,7 +17,7 @@ int main(){
     //  Declaring object arrays
     // ==================================================
     cout << "==================================================\n"
-         << "Declaring object arrays using Default Constructor and "
+         << "Declaring object arrays (array1 & array2) using Default Constructor and "
          << "Overloaded Constructor.\n\n";
 
     DArray array1;
@@ -33,14 +33,14 @@ int main(){
     cout << "==================================================\n"
          << "addElement(), getNumOfElements(), getCapacity(): \n\n"
          << "array1 values: ";
-    array1.addElement(1);
-    array1.addElement(2);
-    array1.addElement(22);
-    array1.addElement(4);
-    array1.addElement(5);
     array1.addElement(3);
-    array1.addElement(77);
-    array1.addElement(232);
+    array1.addElement(2);
+    array1.addElement(1);
+    array1.addElement(55);
+    array1.addElement(6);
+    array1.addElement(23);
+    array1.addElement(3);
+    array1.addElement(1);
     cout << array1;
     cout << "# of elemnents: " << array1.getNumOfElements() << "\n";
     cout << "Max Capacity : " << array1.getCapacity() << "\n\n";
@@ -57,7 +57,7 @@ int main(){
     cout << "==================================================\n\n\n";
 
     cout << "==================================================\n";
-    cout << "Creating new object array. \n\n";
+    cout << "Creating new object array called 'array4'. \n\n";
     DArray array4(10);
     array4.addElement(1);
     array4.addElement(2);
@@ -77,7 +77,7 @@ int main(){
     // ==================================================
     cout << "==================================================\n";
     cout << "replaceElementAt(): \n\n" 
-         << "Replacing index '3' with '15' in array1. \n\n";
+         << "Replacing the value on index '3' with value '15' in array1. \n\n";
     cout << "array1 values: " << array1 << "\n";
     array1.replaceElementAt(15, 3);
 
@@ -187,12 +187,13 @@ int main(){
     // ================================================ 
     cout << "==================================================\n";
     cout << "findElement(): \n\n"
-         << "Searching key in array1. \n\n";
+         << "Searching key in array1: "
+         << array1 << "\n";
     
     int searchKey = 2;
     cout << "key: " << searchKey << setw(14) << "index: " << array1.findElement(searchKey) << "\n";
     
-    searchKey = 77;
+    searchKey = 55;
     cout << "key: " << searchKey << setw(13) << "index: " << array1.findElement(searchKey) << "\n";
     
     searchKey = 101;

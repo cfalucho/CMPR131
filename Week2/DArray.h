@@ -5,6 +5,7 @@
     Homework #1 
     Collaboration: None
 */
+#pragma once
 #include <iostream>
 using namespace std;
 
