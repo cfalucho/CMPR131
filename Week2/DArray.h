@@ -27,10 +27,15 @@ public:
     bool compareArrays(const DArray& otherArray) const;
     bool isSorted() const;
     DArray(const DArray& otherArray);
+    DArray(DArray&& otherArray);
     DArray& operator=(const DArray& rightSide);
     friend ostream& operator<<(ostream& out, const DArray& myArray);
     int findElement(const int& key);
     DArray& operator +=(const DArray& right);
+    DArray& operator=(DArray&& right);
+    void isMemAllocSuccess(int*);
+    int& operator[](int);
+
 };
 
 

@@ -7,10 +7,14 @@
 */
 #include <iostream>
 #include <iomanip>
+#include "DArray.cpp"
 #include "DArray.h"
 using namespace std;
 
+
+
 int main(){
+
     // ==================================================
     //  DArray() and DArray(int)
     //  
@@ -21,8 +25,10 @@ int main(){
          << "Overloaded Constructor.\n\n";
 
     DArray array1;
-    DArray array2(20);
-    
+    DArray array2(3); 
+
+
+
     cout << "==================================================\n\n\n";
 
     // ==================================================
@@ -80,8 +86,11 @@ int main(){
          << "Replacing the value on index '3' with value '15' in array1. \n\n";
     cout << "array1 values: " << array1 << "\n";
     array1.replaceElementAt(15, 3);
-
-    cout << "array1 values after replacement: " << array1;
+    cout << "array1 values after replacement: " << array1 << "\n";
+    
+    cout << "Replacing a value if the index is out of the array's capacity..\n\n";
+    array1.replaceElementAt(-100,-10);
+    cout << "\n";
     cout << "==================================================\n\n\n";
 
 
@@ -160,9 +169,54 @@ int main(){
          << array3 << "\n";
 
     cout << "Using 'operator=' to assign array2 to array3 \n";
+    cout << "array3 values: " << array3 << "\n\n";
     array3.operator=(array2);
-    cout << "array3 values: "<< array3;
+    cout << "array3 values now: "<< array3 << "\n\n";
+
+    cout << "Assigning array1 to array1\n";
+    array1.operator=(array1);
+    cout << array1 << "\n\n";
+
+    cout << "Assigning array1 with 8 elements to an array2 with 6 elements\n";
+    cout << "cap = " << array1.getCapacity() << "\n"; // cap = 3
+    cout << "noe = " << array1.getNumOfElements() << "\n"; // noe = 3 
+    cout << array2 << "\n";
+    array2.operator=(array1);     
+    
+
+    cout << "array2 now has the following: \n";
+    cout << "cap = " << array2.getCapacity() << "\n"; // cap = 50
+    cout << "noe = " << array2.getNumOfElements() << "\n"; // noe = 8 
+    cout << array2 << "\n";
     cout << "==================================================\n\n\n";
+
+
+    // ================================================
+    //  Move Constructor() and Move operator
+    //  
+    //  Copies an object's pointer array with another object's
+    //  pointer array  
+    // ================================================ 
+    cout << "==================================================\n"
+         << "Move Constructor and Move operator=: \n\n";
+     
+
+     
+
+     DArray array7; 
+     array7 = DArray(3);
+
+     // array7 = 3;
+
+     
+     
+
+
+
+     cout << "==================================================\n\n\n";
+
+
+
     
     // ================================================
     //  operator<<
@@ -173,8 +227,6 @@ int main(){
     cout << "operator<<: \n\n";
     cout << "array1 values: ";
     cout << array1 << "\n";
-    cout << "array2 values: ";
-    cout << array2 << "\n";
     cout << "array3 values: ";
     cout << array3;
     cout << "==================================================\n\n\n";
@@ -199,7 +251,6 @@ int main(){
     searchKey = 101;
     cout << "key: " << searchKey << setw(12) << "index: " << array1.findElement(searchKey) << "\n";
 
-    searchKey = 300;
     cout << "==================================================\n\n\n";
     
 
@@ -236,3 +287,4 @@ int main(){
 
     return 0;
 }
+
