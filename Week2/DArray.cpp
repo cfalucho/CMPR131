@@ -133,7 +133,6 @@ DArray& DArray::operator=(DArray&& right){
         numOfElements = right.numOfElements;
         a = right.a;
         right.a = nullptr;
-      
     }
     return *this;
 }

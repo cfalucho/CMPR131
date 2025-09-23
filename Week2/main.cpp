@@ -206,7 +206,7 @@ int main(){
      DArray array7; 
      array7 = DArray(3);
 
-     // array7 = 3;
+     
 
      
      
