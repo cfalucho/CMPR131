@@ -108,16 +108,14 @@ void removeItem(vector<string>& vector, string item){
     string lastElement = vector.back();
     string temp = "";
     bool isFound = false;
-    if (vector.empty())
-    {
+    if (vector.empty()){
         cout << "Cart is already empty.";
         EXIT_SUCCESS;
     }
     
     for (int index = 0; index < vector.size(); index++)
     {
-        if (vector[index] == itemLowerCase) 
-        {
+        if (vector[index] == itemLowerCase) {
             isFound = true;
             temp = vector[index];
             vector[index] = lastElement;
@@ -126,12 +124,10 @@ void removeItem(vector<string>& vector, string item){
             vector.pop_back();
         }
     }
-    if (!isFound && !vector.empty())
-    {
+    if (!isFound && !vector.empty()){
         cout << itemLowerCase << " is not found.\n";
         EXIT_SUCCESS;  
     }
-    
 }
 
 string toLowerCase(string& text){
