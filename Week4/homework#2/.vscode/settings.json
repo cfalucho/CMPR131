@@ -15,6 +15,9 @@
         "__bit_reference": "cpp",
         "iostream": "cpp",
         "new": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "variant": "cpp",
+        "fstream": "cpp",
+        "ios": "cpp"
     }
 }

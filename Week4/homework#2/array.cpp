@@ -22,6 +22,7 @@ int capacity = 5;             // initialize size of 5
 int num_of_elements = 0;
 
 int main(){
+
     string* ptr = new string[capacity];
 
     addItem(ptr, "Watermelon");
@@ -130,7 +131,7 @@ int itemFound(string*& ptr, string item){
 
 void resize(string*& ptr){
     const int DOUBLE = 2;
-    int new_capacity = capacity * DOUBLE;            // Capacity doubles
+    int new_capacity = capacity * DOUBLE;             // Capacity doubles
     string* new_arr = new string[new_capacity];       // Create new pointer array on the heap
 
     if (isMemAllocSucc(new_arr)){

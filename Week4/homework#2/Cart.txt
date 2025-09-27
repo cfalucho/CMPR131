@@ -1,0 +1,8 @@
+  Item Name 		# of items: 6
+---------------------
+1. Nike Pegasus 41
+2. Nike Wildhorse 10
+3. New Balance
+4. Nike Sportswear Club
+5. Nike Sportswear Windrunner
+6. Nike Peak

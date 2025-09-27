@@ -1,23 +1,31 @@
-#include <iostream>
+#pragma once
 using namespace std;
 
 class ShoppingCart{
     private:
-        vector<string> cartList;
-  
+        int capacity;
+        int num_of_elements;
+        string* ptr;
+
     public:
         ShoppingCart();
         void addItem(string);
-        void removeItem(string) const;
+        void removeItem(string);
         void listItems() const;
         int getCapacity() const;
-        int getNumOfItems();
-        // void clearCart();
-        // void saveCart();
-        friend ostream& operator<<(ostream&, const vector<string>);
+        int getNumOfItems() const;
+        void clearCart();
+        void saveCart() const;
+        friend ostream& operator<<(ostream&, const ShoppingCart& cart);
 
-
-
-
-
+        //===============================
+        //   HELPER MEMBER FUNCTIONS
+        //===============================
+        double memoryUsage() const;     
+        bool isMemAllocSuccessful(string*&) const;
+        bool isCartEmpty() const;
+        int itemFound(string) const;
+        void realloc(int);
+        void resize();   
+        
 };
