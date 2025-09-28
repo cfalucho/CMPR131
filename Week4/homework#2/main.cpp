@@ -11,6 +11,7 @@ int main(){
     cout << "Add items to list.\n"; 
     List1.addItem("Nike Pegasus 41");
     List1.addItem("Nike Wildhorse 10");
+    List1.addItem("Nike Wildhorse 10");
     List1.addItem("New Balance");
 
     cout << "\n-------------------------------------------------------------\n\n";
