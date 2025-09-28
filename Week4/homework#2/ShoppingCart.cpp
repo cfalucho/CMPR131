@@ -112,14 +112,16 @@ bool ShoppingCart::isCartEmpty() const{
 }
 
 void ShoppingCart::listItems() const{
-    for (int index = 0; index < capacity; index++){
+    cout << "\n============================================================\n"
+         << "| No. Of Elements: " << num_of_elements << "  |" 
+         << "\t" << "Capacity: " << capacity << "  |"
+         << "\t" << "Memory Usage: " << memoryUsage() << "%  |"
+         << "\n============================================================\n\n" ;
+    
+        for (int index = 0; index < capacity; index++){
         cout << index << ": " << ptr[index] << "\n";
     }
-    cout << "\n"
-         << "No. Of Elements: " << num_of_elements 
-         << "\t" << "Capacity: " << capacity 
-         << "\t" << "Memory Usage: " << memoryUsage() << "%"
-         << "\n\n";
+
 }
 
 int ShoppingCart::getCapacity() const{
@@ -154,24 +156,20 @@ void ShoppingCart::saveCart() const{
 
     cout << "Saving shopping cart list to a file.\n";
     save_file << "  Item Name \t\t" << "# of items: " << num_of_elements
-              << "\n---------------------\n";
-    for (int index = 0; index < num_of_elements; index++)
-    {
+              << "\n-------------------------------------\n";
+    for (int index = 0; index < num_of_elements; index++){
         save_file << index + 1 << ". " << ptr[index] << "\n";
     }
     cout << "Items has been saved to " << filename << "\n"; 
 }
 
 ostream& operator<<(ostream& out, const ShoppingCart& cart){
-    int num_of_elements = cart.getNumOfItems();
-    out << "[";
-    for (int index = 0; index < num_of_elements; index++){
-        out << cart.ptr[index];
-        if (index != num_of_elements - 1){
-            out << ", ";
-        }
+    cout << "=======================================\n";
+    cout << "|  Shopping Cart   |  # of items: " << cart.num_of_elements << "   |\n";
+    cout << "=======================================\n";
+    for (int index = 0; index < cart.num_of_elements; index++){
+        cout << index + 1 << ": " << cart.ptr[index] << "\n";
     }
-    out << "]\n\n";
     return out;
 }
 
@@ -203,10 +201,10 @@ void ShoppingCart::resize(){
 
 bool ShoppingCart::isMemAllocSuccessful(string*& ptr) const{
     if(ptr){
-        cout << "Memory allocation successful.\n";
+        cout << "Memory allocation successful.\n\n";
         return true;
     }else{
-        cout << "Failed memory allocation.\n";
+        cout << "Failed memory allocation.\n\n";
         return false;
     }
 }
