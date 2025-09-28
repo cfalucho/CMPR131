@@ -1,9 +1,16 @@
-  Item Name 		# of items: 7
+  Item Name 		# of items: 14
 -------------------------------------
 1. Nike Pegasus 41
-2. Nike Wildhorse 10
-3. New Balance
-4. Adidas 57
-5. Nike Sportswear Club
-6. Nike Sportswear Windrunner
-7. Nike Peak
+2. Adizero EVO SL Shoes
+3. Galaxy 7 Running Shoes
+4. Numeric Linear Logo T-Shirt
+5. Numeric Linear Logo T-Shirt
+6. Athletics French Terry Crew
+7. Nike Wildhorse 10
+8. Nike Wildhorse 10
+9. Ultraboost 5X Shoes
+10. New Balance
+11. Adidas 57
+12. Nike Sportswear Club
+13. Nike Sportswear Windrunner
+14. Nike Peak

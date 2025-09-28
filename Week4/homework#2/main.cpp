@@ -3,6 +3,8 @@
 #include "ShoppingCart.cpp"
 using namespace std;
 
+
+
 int main(){
     ShoppingCart List1;
     string item_to_remove = "";
@@ -11,7 +13,14 @@ int main(){
     cout << "Add items to list.\n"; 
     List1.addItem("Nike Pegasus 41");
     List1.addItem("Nike Wildhorse 10");
+    List1.addItem("Adizero EVO SL Shoes");
+    List1.addItem("Galaxy 7 Running Shoes");
+    List1.addItem("Numeric Linear Logo T-Shirt");
+    List1.addItem("Numeric Linear Logo T-Shirt");
+    List1.addItem("Athletics French Terry Crew");
     List1.addItem("Nike Wildhorse 10");
+    List1.addItem("Nike Wildhorse 10");
+    List1.addItem("Ultraboost 5X Shoes");
     List1.addItem("New Balance");
 
     cout << "\n-------------------------------------------------------------\n\n";
@@ -31,10 +40,12 @@ int main(){
     cout << "\n-------------------------------------------------------------\n\n";
     
     cout << "Remove an item: ";
+
     getline(cin, item_to_remove);
     List1.removeItem(item_to_remove);
     cout << "\n";
     cout << List1;
+
 
     cout << "\n-------------------------------------------------------------\n\n";
 
@@ -46,7 +57,6 @@ int main(){
     // Clearing cart
     List1.clearCart();
     cout << List1;
-
 
     return 0;
 }

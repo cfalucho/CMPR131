@@ -33,7 +33,6 @@ void ShoppingCart::addItem(string item){
         ptr[num_of_elements++] = item;
         return;
     }
-    
 }
 void ShoppingCart::removeItem(string item) {
     int first_element = 0;
@@ -55,8 +54,7 @@ void ShoppingCart::removeItem(string item) {
         num_of_elements--;
         return;
     }
-    else if (item_location == last_element)
-    {
+    else if (item_location == last_element){
         num_of_elements--;
         return;
     }
@@ -80,7 +78,7 @@ int ShoppingCart::itemFound(string item) const{
     return item_location;
 }
 
-// Moving all elements to a new pointer 
+// Moving all elements to a new 8 
 // except the item to delete.
 void ShoppingCart::realloc(int delete_item){
     int index_begins = 0;                           // First element of the array
@@ -112,16 +110,15 @@ bool ShoppingCart::isCartEmpty() const{
 }
 
 void ShoppingCart::listItems() const{
-    cout << "\n============================================================\n"
+    cout << "\n====================================================================\n"
          << "| No. Of Elements: " << num_of_elements << "  |" 
-         << "\t" << "Capacity: " << capacity << "  |"
-         << "\t" << "Memory Usage: " << memoryUsage() << "%  |"
-         << "\n============================================================\n\n" ;
+         << "  Capacity: " << capacity << "  |"
+         << "  Memory Usage: " << memoryUsage() << "%     |"
+         << "\n====================================================================\n\n";
     
         for (int index = 0; index < capacity; index++){
         cout << index << ": " << ptr[index] << "\n";
     }
-
 }
 
 int ShoppingCart::getCapacity() const{
@@ -164,11 +161,11 @@ void ShoppingCart::saveCart() const{
 }
 
 ostream& operator<<(ostream& out, const ShoppingCart& cart){
-    cout << "=======================================\n";
-    cout << "|  Shopping Cart   |  # of items: " << cart.num_of_elements << "   |\n";
-    cout << "=======================================\n";
+    cout << "=========================================\n";
+    cout << "|  Shopping Cart   |  # of items: " << cart.num_of_elements << "    |\n";
+    cout << "=========================================\n";
     for (int index = 0; index < cart.num_of_elements; index++){
-        cout << index + 1 << ": " << cart.ptr[index] << "\n";
+        cout << index + 1 << ". " << cart.ptr[index] << "\n";
     }
     return out;
 }

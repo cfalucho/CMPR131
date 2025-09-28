@@ -1,6 +1,7 @@
 #pragma once
 using namespace std;
 
+
 class ShoppingCart{
     private:
         int capacity;
@@ -26,6 +27,5 @@ class ShoppingCart{
         bool isCartEmpty() const;
         int itemFound(string) const;
         void realloc(int);
-        void resize();   
-        
+        void resize();  
 };
