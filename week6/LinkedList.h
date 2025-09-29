@@ -14,9 +14,9 @@ class LinkedList
 {
 public:
 
-	LinkedList();// default constructor
-	// Copy constructor
-	// Overloaded Assignment Operator
+	LinkedList();                                   // default constructor
+	LinkedList(const LinkedList&);                  // Copy constructor
+	LinkedList& operator=(const LinkedList& RHS);   // Overloaded Assignment Operator
 
 	void add(int newData);
 	void remove(int key);
