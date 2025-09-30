@@ -1,3 +1,10 @@
+/*
+    Christian Falucho
+    CMPR 131 - Fall 2025
+    Sept 28, 2025
+    In-class exercise
+    Collaboration: None
+*/
 #pragma once
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H

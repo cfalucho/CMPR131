@@ -1,6 +1,13 @@
 
+/*
+    Christian Falucho
+    CMPR 131 - Fall 2025
+    Sept 28, 2025
+    In-class exercise
+    Collaboration: None
+*/
 #include "LinkedList.h"
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 LinkedList::LinkedList()
@@ -15,36 +22,33 @@ LinkedList::LinkedList(const LinkedList& otherList){
     Node* currPtr;    // Traverse the list
     
     cout << "\nPerforming Copy Constructor...\n";
-    // if the other list is empty
-    if (otherList.first == nullptr){
-        first = nullptr;
-        last = nullptr;
-        noe = 0;
-    }
-    else{
-        currPtr = otherList.first;        // Point the otherList's first to currPtr;
-        noe = otherList.noe;              // copy otherList's noe
-        first = new Node;                 // create new first new and copy otherList's info
-        first->data = currPtr->data;
-        first->next = currPtr->next;
+    
+    // set the first nodes to null pointer
+    first = nullptr;
+    last = nullptr;
+    noe = 0;
+  
+   
+    currPtr = otherList.first;        // Point the otherList's first to currPtr;
+    noe = otherList.noe;              // copy otherList's noe
+    first = new Node;                 // create new first new and copy otherList's info
+    first->data = currPtr->data;
+    first->next = currPtr->next;
 
-        last = first;                     // point last to first
-        currPtr = currPtr->next;          // maker currPtr point to next node
+    last = first;                     // point last to first
+    currPtr = currPtr->next;          // maker currPtr point to next node
 
-        // copy all the other nodes
-        while (currPtr != nullptr)
-        {
-            temp = new Node;
-            temp->data = currPtr->data;
-            temp->next = nullptr;
-            last->next = temp;
-            last = temp;
-            currPtr = currPtr->next;
-        }
+    // copy all the other nodes
+    while (currPtr != nullptr){
+        temp = new Node;
+        temp->data = currPtr->data;
+        temp->next = nullptr;
+        last->next = temp;
+        last = temp;
+        currPtr = currPtr->next;
     }
     
     cout << "Copy Constructor completed.\n";
-
 }
 
 LinkedList& LinkedList::operator=(const LinkedList& RHS){
@@ -73,7 +77,6 @@ LinkedList& LinkedList::operator=(const LinkedList& RHS){
             currPtr = currPtr->next;
         }        
     }
-
     return *this;
 }
 
