@@ -38,7 +38,6 @@ class Queue{
                 a[first] = 0;
                 first++;
                 num_of_elements--;
-                
             }
         }
 
