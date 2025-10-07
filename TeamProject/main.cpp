@@ -22,17 +22,24 @@ int main(){
     participants[3] = Participant("John");
     participants[4] = Participant("Ana");
     
-    // for (int i = 0; i < SIZE; i++)
-    // {
-    //     cout << p1[i].getName() << "\n";
-    // }
-    
-   participants[0].add_walk_dist_per_neighborhood(Neighborhood("Old Towne", 12.2));
-   participants[0].add_walk_dist_per_neighborhood(Neighborhood("El Monte", 5.1));
-   participants[0].add_walk_dist_per_neighborhood(Neighborhood("Orange Hills", 3.1));
-   participants[0].add_walk_dist_per_neighborhood(Neighborhood("Santiago Creek", 55.1));
-   participants[0].add_walk_dist_per_neighborhood(Neighborhood("Villa Park Area", 20.1));
-   participants[0].add_walk_dist_per_neighborhood(Neighborhood("El Camino Real", 33.1));
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << participants[0].neighborhoods[i]->get_distance_walk();
+    }
+    participants[0].neighborhoods[0]->add_distance_walk(12.3);
+    participants[0].neighborhoods[1]->add_distance_walk(3.3);
+    cout << "\n";
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << participants[0].neighborhoods[i]->get_distance_walk();
+    }
+
+//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(12.2));
+//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(5.1));
+//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(3.1));
+//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(55.1));
+//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(20.1));
+//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(33.1));
      
    participants[1].add_walk_dist_per_neighborhood(Neighborhood("Old Towne", 12.2));
    participants[1].add_walk_dist_per_neighborhood(Neighborhood("El Monte", 51.1));
@@ -48,6 +55,7 @@ int main(){
    participants[2].add_walk_dist_per_neighborhood(Neighborhood("Villa Park Area", 2.1));
    participants[2].add_walk_dist_per_neighborhood(Neighborhood("El Camino Real", 3.1));
 
+   
 
 
    
