@@ -22,44 +22,29 @@ int main(){
     participants[3] = Participant("John");
     participants[4] = Participant("Ana");
     
-    for (int i = 0; i < SIZE; i++)
-    {
-        cout << participants[0].neighborhoods[i]->get_distance_walk();
-    }
-    participants[0].neighborhoods[0]->add_distance_walk(12.3);
-    participants[0].neighborhoods[1]->add_distance_walk(3.3);
+  
+    participants[0].neighborhoods[0]->set_distance_walk(12.3);
+    participants[0].neighborhoods[1]->set_distance_walk(33.3);
+    participants[0].neighborhoods[2]->set_distance_walk(1.3);
+    participants[0].neighborhoods[3]->set_distance_walk(2.3);
+    participants[0].neighborhoods[4]->set_distance_walk(6.3);
+    participants[0].neighborhoods[5]->set_distance_walk(4.3);
+
+
+    
+    
+
     cout << "\n";
-    for (int i = 0; i < SIZE; i++)
-    {
-        cout << participants[0].neighborhoods[i]->get_distance_walk();
-    }
+  
 
-//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(12.2));
-//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(5.1));
-//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(3.1));
-//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(55.1));
-//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(20.1));
-//    participants[0].add_walk_dist_per_neighborhood(Neighborhood(33.1));
+
      
-   participants[1].add_walk_dist_per_neighborhood(Neighborhood("Old Towne", 12.2));
-   participants[1].add_walk_dist_per_neighborhood(Neighborhood("El Monte", 51.1));
-   participants[1].add_walk_dist_per_neighborhood(Neighborhood("Orange Hills", 33.1));
-   participants[1].add_walk_dist_per_neighborhood(Neighborhood("Santiago Creek", 6.1));
-   participants[1].add_walk_dist_per_neighborhood(Neighborhood("Villa Park Area", 60.1));
-   participants[1].add_walk_dist_per_neighborhood(Neighborhood("El Camino Real", 23.1));
 
-   participants[2].add_walk_dist_per_neighborhood(Neighborhood("Old Towne", 2.2));
-   participants[2].add_walk_dist_per_neighborhood(Neighborhood("El Monte", 13.1));
-   participants[2].add_walk_dist_per_neighborhood(Neighborhood("Orange Hills", 13.1));
-   participants[2].add_walk_dist_per_neighborhood(Neighborhood("Santiago Creek", 5.1));
-   participants[2].add_walk_dist_per_neighborhood(Neighborhood("Villa Park Area", 2.1));
-   participants[2].add_walk_dist_per_neighborhood(Neighborhood("El Camino Real", 3.1));
 
+   for (int i = 0; i < SIZE; i++){
+        participants[i].display_Participants_Neighborhood();
+   }
    
-
-
-   
-   participants[0].display_Participants_Neighborhood();
 
 
 

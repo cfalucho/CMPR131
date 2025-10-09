@@ -5,16 +5,21 @@ using namespace std;
 
 class Participant{
     public:
+        // Default Constructor
         Participant();
+        // Overloaed Constructor
         Participant(string);
+        // Destructor
         ~Participant();
 
+        // Getter
+        string getName() const;
+
+        Neighborhood get_distance_by_neighborhood(int id);
+
         void display_Participants_Neighborhood();
-        void add_walk_dist_per_neighborhood(const Neighborhood&);
-        void add_distance_walk(double);
-        string getName();
-        Neighborhood getNeighborhoods();
         
+
         Neighborhood** neighborhoods;
     private:
         int capacity;

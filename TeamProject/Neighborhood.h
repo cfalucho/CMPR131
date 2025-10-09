@@ -4,17 +4,20 @@ using namespace std;
 
 class Neighborhood{
     public:
+        // Default Constructor
         Neighborhood();
-        // Neighborhood(int);
+        // Overloaded Constructor
         Neighborhood(int, string);
-        Neighborhood(double);
-        Neighborhood(string, double);
+        // Destructor
         ~Neighborhood();
-        void setNeighborhood(int, string);
-        void add_distance_walk(double);
-        string get_neighborhood_name();
-        double get_distance_walk();
-        int get_neighborhood_unique_id();
+
+        // Setters
+        void set_distance_walk(double);
+
+        // Getters
+        string get_neighborhood_name() const;
+        double get_distance_walk() const;
+        int get_neighborhood_unique_id() const;
         
 
 
