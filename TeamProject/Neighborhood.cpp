@@ -15,7 +15,7 @@ Neighborhood::Neighborhood(int id, string name){
 Neighborhood::~Neighborhood(){}
 
 void Neighborhood::set_distance_walk(double distance){
-    this->distance_walk = distance;
+    distance_walk = distance;
 };
 
 string Neighborhood::get_neighborhood_name() const{

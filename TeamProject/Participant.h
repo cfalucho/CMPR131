@@ -9,21 +9,19 @@ class Participant{
         Participant();
         // Overloaed Constructor
         Participant(string);
+
+        Participant(Neighborhood);
         // Destructor
         ~Participant();
 
         // Getter
-        string getName() const;
+        string get_name() const;
 
-        Neighborhood get_distance_by_neighborhood(int id);
 
-        void display_Participants_Neighborhood();
-        
-
-        Neighborhood** neighborhoods;
+        void display_participants_neighborhoods();
     private:
         int capacity;
         int num_of_elements;
         string name;
-        // Neighborhood** neighborhoods;
+        // Neighborhood** neighborhoods; 
 };

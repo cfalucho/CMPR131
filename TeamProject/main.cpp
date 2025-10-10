@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Participant.cpp"
 #include "Neighborhood.cpp"
+#include "Manager.cpp"
 using namespace std;
 
     /*
@@ -12,41 +13,39 @@ using namespace std;
         North El Camino Real
     */
 int main(){ 
-    const int SIZE = 5;
-    Participant* participants = new Participant[SIZE];
+    Manager manage(5);
+    manage.add_new_participant("Christian");
+    manage.add_new_participant("Sally");
+    manage.add_new_participant("Logan");
 
+    // manage.add_new_participant("Sally");
+    // manage.add_new_participant("Logan");
 
-    participants[0] = Participant("Christian");
-    participants[1] = Participant("Sally");
-    participants[2] = Participant("Logan");
-    participants[3] = Participant("John");
-    participants[4] = Participant("Ana");
+    manage.set_distance_walk();
     
+    manage.display_all_participants();
+
+    // const int SIZE = 5;
+    // Participant* participants = new Participant[SIZE];
+
+    // participants[0] = Participant("Christian");
+    // participants[1] = Participant("Sally");
+    // participants[2] = Participant("Logan");
+    // participants[3] = Participant("John");
+    // participants[4] = Participant("Ana");
+    
+//     participants[0].neighborhoods[2]->set_distance_walk(1.3);
+//     participants[0].neighborhoods[3]->set_distance_walk(2.3);
+//     participants[0].neighborhoods[4]->set_distance_walk(6.3);
+//     participants[0].neighborhoods[5]->set_distance_walk(4.3);
+
+//     cout << "\n";
   
-    participants[0].neighborhoods[0]->set_distance_walk(12.3);
-    participants[0].neighborhoods[1]->set_distance_walk(33.3);
-    participants[0].neighborhoods[2]->set_distance_walk(1.3);
-    participants[0].neighborhoods[3]->set_distance_walk(2.3);
-    participants[0].neighborhoods[4]->set_distance_walk(6.3);
-    participants[0].neighborhoods[5]->set_distance_walk(4.3);
 
-
-    
-    
-
-    cout << "\n";
-  
-
-
-     
-
-
-   for (int i = 0; i < SIZE; i++){
-        participants[i].display_Participants_Neighborhood();
-   }
+//    for (int i = 0; i < 5; i++){
+//         participants[i].display_Participants_Neighborhood();
+//    }
    
-
-
 
 
 // Neighborhood Class
