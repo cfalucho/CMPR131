@@ -1,0 +1,21 @@
+=========================================
+|  Shopping Cart                        |
+=========================================
+1. Nike Pegasus 41 | price: $23.21
+2. Adizero EVO SL Shoes | price: $7.23
+3. Galaxy 7 Running Shoes | price: $7.23
+4. Numeric Linear Logo T-Shirt | price: $7.23
+5. Numeric Linear Logo T-Shirt | price: $7.23
+6. Athletics French Terry Crew | price: $7.23
+7. Nike Wildhorse 10 | price: $7.23
+8. Nike Wildhorse 10 | price: $7.23
+9. Ultraboost 5X Shoes | price: $100.23
+10. New Balance | price: $200.1
+11. Adidas 57 | price: $104.23
+12. Nike Sportswear Club | price: $44.23
+13. Nike Sportswear Windrunner | price: $190.23
+14. Nike Peak | price: $99.99
+
+=========================================
+# of items: 14 | Total cost: $812.83    |
+=========================================

@@ -20,7 +20,6 @@ class Neighborhood{
         int get_neighborhood_unique_id() const;
         
 
-
     private:
         int capacity;
         int num_of_elements;

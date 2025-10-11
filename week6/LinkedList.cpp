@@ -10,8 +10,7 @@
 #include <iostream>
 using namespace std;
 
-LinkedList::LinkedList()
-{ 
+LinkedList::LinkedList(){ 
 	first = nullptr;
 	last = nullptr;
 	noe = 0;
