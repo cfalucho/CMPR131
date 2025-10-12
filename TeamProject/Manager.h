@@ -17,5 +17,5 @@ class Manager{
         int capacity;
         int num_of_elements;
         Participant* participants;
-        Neighborhood** neighborhoods; 
+        string* neighborhood_names;
 };

@@ -2,13 +2,13 @@
     Christian Falucho
     CMPR 131 - Fall 2025
     October 10, 2025
-    Homework #2
+    Homework #3
     Collaboration: None
 */
 #pragma once
 using namespace std;
 
-class Node{
+struct Node{
     string item_name;
     double item_price;
     Node* next = nullptr;

@@ -2,7 +2,7 @@
     Christian Falucho
     CMPR 131 - Fall 2025
     October 10, 2025
-    Homework #2
+    Homework #3
     Collaboration: None
 */
 #include <iostream>
@@ -24,7 +24,8 @@ void ShoppingCart::addItem(string item, double price){
 
     isMemAllocSuccessful(temp);
 
-    // Check if first node is a null pointer
+    // Check if there's a first node
+    // If not, make the first node
     if (first == nullptr){
         temp->item_name = item;
         temp->item_price = price;
@@ -32,8 +33,7 @@ void ShoppingCart::addItem(string item, double price){
         first = temp;
         last = temp;
         temp = nullptr;
-    // If first node is not null pointer
-    // then there exists nodes in the list
+    // Connect the newly created node
     }else{
         temp->item_name = item;
         temp->item_price = price;
@@ -45,7 +45,7 @@ void ShoppingCart::addItem(string item, double price){
 }
 void ShoppingCart::removeItem(string item) {
     Node* prevPtr;                          // previous node
-    Node* currPtr = first;                  // traverse tthe list of nodes
+    Node* currPtr = first;                  // traverse the list of nodes
     // Check if its the first node
     if (currPtr->item_name == item){
         first = first->next;

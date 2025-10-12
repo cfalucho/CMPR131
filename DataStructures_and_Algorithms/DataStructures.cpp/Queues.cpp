@@ -51,7 +51,7 @@ class Queue{
 
         void displayQueue() const{
             for (int i = 0; i < capacity; i++){
-                cout << i << ". " << a[i] << "\n";
+                cout << i << ")" << a[i] << " ";
             }    
             cout << "\n";
 

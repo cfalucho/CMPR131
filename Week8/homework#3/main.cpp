@@ -1,16 +1,14 @@
 /*
     Christian Falucho
     CMPR 131 - Fall 2025
-    October 28, 2025
-    Homework #2
+    October 10, 2025
+    Homework #3
     Collaboration: None
 */
 #include <iostream>
 #include "ShoppingCart.h"
 #include "ShoppingCart.cpp"
 using namespace std;
-
-
 
 int main(){
     ShoppingCart List1;
