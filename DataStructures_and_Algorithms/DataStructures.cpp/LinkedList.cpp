@@ -37,20 +37,64 @@ class LinkedList{
                 last->next = temp;
                 last = temp;
                 
-                
                 num_of_elements++;
                 temp = nullptr;
             }
         }
 
+        void delete_node(int value){
+            Node* prevPtr;                  // Pointer that follows currPtr
+            Node* currPtr = first;          // Traverse the list
+            
+            if (currPtr->data == value){
+                first = currPtr->next;
+                delete currPtr;
+            }
+
+            // check every node in the middle
+            // if the node is not null and does not equal the value to delete
+            // continue on
+            while (currPtr != nullptr && currPtr->data != value){
+                prevPtr = currPtr;
+                currPtr = currPtr->next;
+            }
+            
+            // Once we find the value to delete
+            // connect previous node to the next node
+            if (currPtr){
+                cout << "Deleting node..: " << currPtr << "\n";
+                prevPtr->next = currPtr->next;
+                delete currPtr;
+            }
+        }
+
+        void destroy_list(){
+            cout << "Destroying the list..\n";
+            Node* currPtr = first;
+
+            while (currPtr){
+                first = first->next;
+                delete currPtr;
+                currPtr = first;
+                last = nullptr;
+            }
+            
+        }
+
         void display_linkedlist(){
             Node* nodePtr = first;
 
-            while (nodePtr){
-              cout << "value: " << nodePtr->data <<  "\n";
+            cout << "first points to: " << first << "\n";
+            cout << "last points to: " << last << "\n";
+            while (nodePtr != nullptr){
+              cout << "---------------------\n";
+              cout << "Node memory address: " << nodePtr << "\n";
+              cout << "---------------------\n";
+              cout << "data: " << nodePtr->data <<  "\n";
+              cout << "next: " << nodePtr->next << "\n";
+              cout << "---------------------\n";
               nodePtr = nodePtr->next;
             }
-            
         }
 
 };
@@ -60,9 +104,20 @@ int main(){
 
     l1.add_node(23);
     l1.add_node(44);
-    l1.add_node(55);
+    // l1.add_node(55);
+    // l1.add_node(12);
 
     l1.display_linkedlist();
+
+    // l1.delete_node(55);
+
+    // l1.display_linkedlist();
+
+
+    // l1.destroy_list();
+
+    // l1.display_linkedlist();
+
 
 
 }
