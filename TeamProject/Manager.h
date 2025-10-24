@@ -9,13 +9,24 @@ class Manager{
         Manager(int);
         
         void add_new_participant(string);
-        // void set_distance_walk(Participant*);
+        // setters
         void set_distance_walk();
+        void set_distance_walk_by_neighborhood_id(int, int, double);
 
-        void display_all_participants();
-    private:
+        // getters
+        void display_a_participant(int) const;
+        void display_a_participant_total_by_id(int) const;
+        void display_a_participant_and_a_neighborhood(int, int) const;
+        void display_all_participants()const;
+        void display_all_participants_and_their_neighborhoods() const;
+        void display_all_participants_and_their_distance_walks_per_neighborhood() const;
+
+        // void most_active_participant_by_total() const;
+    
+        private:
         int capacity;
         int num_of_elements;
+        int id;
         Participant* participants;
         string* neighborhood_names;
 };

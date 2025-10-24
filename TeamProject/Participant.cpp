@@ -16,7 +16,10 @@ string neighborhood_names[NEIGHBORHOOD_SIZE] = {
 Participant::Participant(){
     name = "";
 }
-Participant::Participant(string new_participant){
+Participant::Participant(string new_participant, int uid){
+    capacity = NEIGHBORHOOD_SIZE;
+    id = uid;
+    total_distance = 0.0;
     name = new_participant;
 
     neighborhoods = new Neighborhood*[capacity];
@@ -28,37 +31,49 @@ Participant::Participant(string new_participant){
 
 void Participant::add_neighborhood_distance(double distance_walk){
     for (int i = 0; i < NEIGHBORHOOD_SIZE; i++){
-        neighborhoods[i]->set_distance_walk(distance_walk);
-        // totalDistance += distance_walk;
+        neighborhoods[i]->set_distance_walk_this_neighborhood(distance_walk);
     }
 }
 
-
-
+void Participant::add_to_total_distance(double distance_walk){
+    total_distance += distance_walk;
+}
 
 Participant::~Participant(){};
+
 
 string Participant::get_name() const{
     return name;
 }
 
-double Participant::get_total_distance() const {
-    return totalDistance;
+int Participant::get_id() const{
+    return id;
 }
 
-// Neighborhood Participant::get_neighborhoods() const{
-//     return **neighborhoods;
-// }
+int Participant::get_size() const{
+    return num_of_elements;
+}
 
-// void Participant::display_participants_neighborhoods(){
-//     cout << "\n---------------------------------------\n";
-//     cout << "Participant: " << name << "\n";
-//     cout << "---------------------------------------\n";
-//     for (int i = 0; i < capacity; i++){
-//         cout << showpoint << fixed << setprecision(1);
-//         cout << neighborhoods[i]->get_neighborhood_unique_id() << ") "
-//              << neighborhoods[i]->get_neighborhood_name() << ": \t\t" << setw(8)
-//              << neighborhoods[i]->get_distance_walk();
-//         cout << "\n";
-//     }
-// }
+double Participant::get_total_distance() const {
+    return total_distance;
+}
+
+string Participant::get_neighborhood_name_by_id(int id)const{
+    return neighborhoods[id]->get_neighborhood_name();
+}
+
+double Participant::get_distance_walk_by_neighborhood_id(int id) const{
+    return neighborhoods[id]->get_distance_walk();
+ 
+}
+
+void Participant::display_participants_neighborhoods(){
+    cout << "\n---------------------------------------\n";
+    cout << "Participant: " << name << "\n";
+    cout << "---------------------------------------\n";
+    for (int i = 0; i < capacity; i++){
+        cout << showpoint << fixed << setprecision(1);
+        cout << neighborhoods[i]->get_neighborhood_unique_id() << ") "
+             << neighborhoods[i]->get_neighborhood_name() << ": \t\t" << setw(8);        cout << "\n";
+    }
+}

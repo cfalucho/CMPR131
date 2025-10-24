@@ -12,13 +12,13 @@ class Neighborhood{
         ~Neighborhood();
 
         // Setters
-        void set_distance_walk(double);
+        void set_distance_walk_this_neighborhood(double);
 
         // Getters
         string get_neighborhood_name() const;
         double get_distance_walk() const;
-        int get_neighborhood_unique_id() const;
-        
+        int get_neighborhood_unique_id()const;
+        int get_size() const;
 
     private:
         int capacity;

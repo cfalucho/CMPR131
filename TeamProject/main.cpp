@@ -13,19 +13,72 @@ using namespace std;
         North El Camino Real
     */
 int main(){ 
-    Manager manage(5);
+    Manager manage(2);
     manage.add_new_participant("Christian");
     manage.add_new_participant("Sally");
     manage.add_new_participant("Logan");
+    manage.add_new_participant("Onyx");
 
     // manage.add_new_participant("Sally");
     // manage.add_new_participant("Logan");
 
-    manage.set_distance_walk();
+    // manage.set_distance_walk();
     
-    manage.display_all_participants();
+    // manage.display_all_participants();
+    // string name = "";
+    manage.display_a_participant(0);
+    manage.display_a_participant(1);
+    manage.display_a_participant(2);
+    manage.display_a_participant(3);
+    manage.display_a_participant(4);
 
-    // const int SIZE = 5;
+
+    // manage.display_all_participants_and_their_neighborhoods();
+    manage.set_distance_walk_by_neighborhood_id(0,0,2.2);
+    manage.set_distance_walk_by_neighborhood_id(0,1,8.2);
+    manage.set_distance_walk_by_neighborhood_id(0,2,4.2);
+    manage.set_distance_walk_by_neighborhood_id(0,3,13.2);
+    manage.set_distance_walk_by_neighborhood_id(0,4,8.2);
+    manage.set_distance_walk_by_neighborhood_id(0,5,9.2);
+    
+    manage.set_distance_walk_by_neighborhood_id(1,0,5.7);
+    manage.set_distance_walk_by_neighborhood_id(1,1,6.2);
+    manage.set_distance_walk_by_neighborhood_id(1,2,7.8);
+    manage.set_distance_walk_by_neighborhood_id(1,3,9.2);
+    manage.set_distance_walk_by_neighborhood_id(1,4,7.2);
+    manage.set_distance_walk_by_neighborhood_id(1,5,4.2);
+
+
+    manage.set_distance_walk_by_neighborhood_id(2,1,2.8);
+    manage.set_distance_walk_by_neighborhood_id(2,2,5.8);
+
+    manage.set_distance_walk_by_neighborhood_id(3,0,5.8);
+    manage.set_distance_walk_by_neighborhood_id(3,1,7.8);
+    manage.set_distance_walk_by_neighborhood_id(3,2,12.3);
+    manage.set_distance_walk_by_neighborhood_id(3,4,9.1);
+    manage.set_distance_walk_by_neighborhood_id(3,5,1.2);
+    
+    manage.display_a_participant_and_a_neighborhood(1,1);
+    cout << "\n";
+    manage.display_a_participant_and_a_neighborhood(1,2);
+    cout << "\n";
+    manage.display_a_participant_and_a_neighborhood(1,3);
+    cout << "\n";
+    manage.display_a_participant_total_by_id(1);
+    cout << "\n";
+    manage.display_a_participant_and_a_neighborhood(2,1);
+    cout << "\n";
+    manage.display_a_participant_total_by_id(2);
+    cout << "\n\n";
+
+    manage.display_all_participants_and_their_distance_walks_per_neighborhood();
+    
+    
+    // manage.most_active_participant_by_total();
+
+    // manage.display_all_participants_and_their_distance_walks_per_neighborhood();
+
+    // const int SIZE = 5
     // Participant* participants = new Participant[SIZE];
 
     // participants[0] = Participant("Christian");
