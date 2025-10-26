@@ -36,10 +36,16 @@ Manager::Manager(int participant_size){
     neighborhood_names[5] = "N. El Camino Real";
 }
 
-void Manager::add_new_participant(string name){
-    id++;
-    participants[num_of_elements++] = Participant(name, id);
-}
+void Manager::add_new_participant(int id, string name){
+
+    participants[num_of_elements++] = Participant(id, name);
+};
+
+
+void Manager::add_new_participant(int id, string name, double distance_walk_arr[]){
+
+    participants[num_of_elements++] = Participant(id, name, distance_walk_arr);
+};
 
 
 void Manager::set_distance_walk(){
@@ -63,20 +69,9 @@ void Manager::set_distance_walk_by_neighborhood_id(int uid, int neighborhood_id,
     participants[uid].neighborhoods[neighborhood_id]->set_distance_walk_this_neighborhood(distance_walk);
 }
 
-
-// void Manager::get_distance_walk_from_user_id(int id) const{
-//     string participant_name = "";
-//     for (int i = 0; i < participants->get_size(); i++){
-//         if (participants[i].get_id() == id){
-//             participant_name = participants[i].get_name();
-//             cout << participant_name;
-//         }
-//     }
-    
-// }
 void Manager::display_a_participant(int id) const{
-    cout << "Name: " << participants[id].get_name() 
-         << "\tUID: " << participants[id].get_id() << "\n";
+    cout << "ID: " << participants[id].get_id()
+         << "\tName: " << participants[id].get_name() << "\n";
 }
 
 void Manager::display_a_participant_total_by_id(int uid) const{
@@ -87,7 +82,7 @@ void Manager::display_a_participant_total_by_id(int uid) const{
 void Manager::display_all_participants() const{
     for (int index = 0; index < num_of_elements; index++){
         cout << "\n---------------------------------------\n";
-        cout << "Participant: " << participants[index].get_name() << "\t\t" << participants[0].get_id();
+        cout << "Participant: " << participants[index].get_name() << "\t\t" << participants[index].get_id();
         cout << "\n---------------------------------------\n";  
     }
 }
@@ -97,9 +92,7 @@ void Manager::display_a_participant_and_a_neighborhood(int id, int neighborhood_
          << "\tName: " << participants[id].get_name()
          << "\t\tNeighborhood: " << participants[id].get_neighborhood_name_by_id(neighborhood_id)
          << "\t\tDistance: " << participants[id].get_distance_walk_by_neighborhood_id(neighborhood_id);
-
     }
-
 
 void Manager::display_all_participants_and_their_neighborhoods() const {
     for (int i = 0; i < num_of_elements; i++){
@@ -137,36 +130,22 @@ void Manager::display_all_participants_and_their_distance_walks_per_neighborhood
         // cout << "Most Active Participant of the Day: ";
                   
     }
-    
-   
 }
 
-// void Manager::most_active_participant_by_total(){
-//     for (int i = 0; i < participants.get_size(); i++){
-//         for (int j = i + 1; j < participants.get_size() - 1; i++)
-//         {
-//             if (participants[i] < participants[j])
-//             {
-//                 participants = new Participant[1];
-//                 participants = arr[i];
-//                 arr[i] = arr[j];
-//                 arr[j] = temp;
-//             }
-            
-//         }
-        
-//     }
-// }
-
-// void selectionSort(int arr[], int SIZE){
-//     for (int i = 0; i < SIZE; i++){
-//         for (int j = i + 1; j < SIZE - 1; j++){
-//             if (arr[j] < arr[i]){
-//                 int temp = 0;
-//                 temp = arr[i];
-//                 arr[i] = arr[j];
-//                 arr[j] = temp;
-//             }
-//         }
-//     }
-// }
+Participant* Manager::most_active_participant_by_total() const{
+    if (num_of_elements > 0) //if we have participants
+    {
+        int activeParticipantID = 0;
+        double highestTotal = participants[0].get_total_distance();
+        for (int i = 1; i < participants->get_size() - 1; i++)
+        {
+            if (participants[i].get_total_distance() > highestTotal)
+            {
+                highestTotal = participants[i].get_total_distance();
+                activeParticipantID = i;
+            }
+        }
+        return &participants[activeParticipantID];
+    }
+    return nullptr;
+}

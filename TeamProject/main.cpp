@@ -2,6 +2,9 @@
 #include "Participant.cpp"
 #include "Neighborhood.cpp"
 #include "Manager.cpp"
+#include <fstream>
+#include <sstream>
+
 using namespace std;
 
     /*
@@ -12,12 +15,67 @@ using namespace std;
         Villa Park Area
         North El Camino Real
     */
+
 int main(){ 
-    Manager manage(2);
-    manage.add_new_participant("Christian");
-    manage.add_new_participant("Sally");
-    manage.add_new_participant("Logan");
-    manage.add_new_participant("Onyx");
+
+    
+    Manager manage(50);
+
+    // Read a file
+    ifstream readFile;
+    readFile.open("data.txt");
+    if (!readFile.is_open()){
+        cout << "Error opening file.";
+        return 1;
+    }
+
+    string line;
+
+    // array to store distance
+    double distanceWalk[6] = {0};
+    for (int i = 0; i < 6; i++){
+        distanceWalk[i] = 0;
+    }
+    
+    while (getline(readFile, line)){
+        int id;
+        string firstName, lastName;
+        double num;
+
+        // Parse strings from a line of text
+        stringstream ss(line);
+
+        ss >> id >> firstName >> lastName;
+        
+        cout << id << " " << firstName << " " << lastName << " ";
+
+        int i = 0;
+        // parse the doubles and store into an array
+        while (ss >> num){
+            cout << num << " ";
+            distanceWalk[i] = num;
+            i++;
+        }
+        cout << endl;
+        
+        for (int i = 0; i < 6; i++){
+            cout << distanceWalk[i] << " ";
+        }    
+        cout << endl;
+
+        manage.add_new_participant(id, firstName, distanceWalk);
+    }
+
+    manage.display_all_participants_and_their_distance_walks_per_neighborhood();
+
+    
+
+
+
+
+    
+    
+    
 
     // manage.add_new_participant("Sally");
     // manage.add_new_participant("Logan");
@@ -26,52 +84,52 @@ int main(){
     
     // manage.display_all_participants();
     // string name = "";
-    manage.display_a_participant(0);
-    manage.display_a_participant(1);
-    manage.display_a_participant(2);
-    manage.display_a_participant(3);
-    manage.display_a_participant(4);
+    // manage.display_a_participant(0);
+    // manage.display_a_participant(1);
+    // manage.display_a_participant(2);
+    // manage.display_a_participant(3);
+    // manage.display_a_participant(4);
 
 
-    // manage.display_all_participants_and_their_neighborhoods();
-    manage.set_distance_walk_by_neighborhood_id(0,0,2.2);
-    manage.set_distance_walk_by_neighborhood_id(0,1,8.2);
-    manage.set_distance_walk_by_neighborhood_id(0,2,4.2);
-    manage.set_distance_walk_by_neighborhood_id(0,3,13.2);
-    manage.set_distance_walk_by_neighborhood_id(0,4,8.2);
-    manage.set_distance_walk_by_neighborhood_id(0,5,9.2);
+    // // manage.display_all_participants_and_their_neighborhoods();
+    // manage.set_distance_walk_by_neighborhood_id(0,0,2.2);
+    // manage.set_distance_walk_by_neighborhood_id(0,1,8.2);
+    // manage.set_distance_walk_by_neighborhood_id(0,2,4.2);
+    // manage.set_distance_walk_by_neighborhood_id(0,3,13.2);
+    // manage.set_distance_walk_by_neighborhood_id(0,4,8.2);
+    // manage.set_distance_walk_by_neighborhood_id(0,5,9.2);
     
-    manage.set_distance_walk_by_neighborhood_id(1,0,5.7);
-    manage.set_distance_walk_by_neighborhood_id(1,1,6.2);
-    manage.set_distance_walk_by_neighborhood_id(1,2,7.8);
-    manage.set_distance_walk_by_neighborhood_id(1,3,9.2);
-    manage.set_distance_walk_by_neighborhood_id(1,4,7.2);
-    manage.set_distance_walk_by_neighborhood_id(1,5,4.2);
+    // manage.set_distance_walk_by_neighborhood_id(1,0,5.7);
+    // manage.set_distance_walk_by_neighborhood_id(1,1,6.2);
+    // manage.set_distance_walk_by_neighborhood_id(1,2,7.8);
+    // manage.set_distance_walk_by_neighborhood_id(1,3,9.2);
+    // manage.set_distance_walk_by_neighborhood_id(1,4,7.2);
+    // manage.set_distance_walk_by_neighborhood_id(1,5,4.2);
 
 
-    manage.set_distance_walk_by_neighborhood_id(2,1,2.8);
-    manage.set_distance_walk_by_neighborhood_id(2,2,5.8);
+    // manage.set_distance_walk_by_neighborhood_id(2,1,2.8);
+    // manage.set_distance_walk_by_neighborhood_id(2,2,5.8);
 
-    manage.set_distance_walk_by_neighborhood_id(3,0,5.8);
-    manage.set_distance_walk_by_neighborhood_id(3,1,7.8);
-    manage.set_distance_walk_by_neighborhood_id(3,2,12.3);
-    manage.set_distance_walk_by_neighborhood_id(3,4,9.1);
-    manage.set_distance_walk_by_neighborhood_id(3,5,1.2);
+    // manage.set_distance_walk_by_neighborhood_id(3,0,5.8);
+    // manage.set_distance_walk_by_neighborhood_id(3,1,7.8);
+    // manage.set_distance_walk_by_neighborhood_id(3,2,12.3);
+    // manage.set_distance_walk_by_neighborhood_id(3,4,9.1);
+    // manage.set_distance_walk_by_neighborhood_id(3,5,1.2);
     
-    manage.display_a_participant_and_a_neighborhood(1,1);
-    cout << "\n";
-    manage.display_a_participant_and_a_neighborhood(1,2);
-    cout << "\n";
-    manage.display_a_participant_and_a_neighborhood(1,3);
-    cout << "\n";
-    manage.display_a_participant_total_by_id(1);
-    cout << "\n";
-    manage.display_a_participant_and_a_neighborhood(2,1);
-    cout << "\n";
-    manage.display_a_participant_total_by_id(2);
-    cout << "\n\n";
+    // manage.display_a_participant_and_a_neighborhood(1,1);
+    // cout << "\n";
+    // manage.display_a_participant_and_a_neighborhood(1,2);
+    // cout << "\n";
+    // manage.display_a_participant_and_a_neighborhood(1,3);
+    // cout << "\n";
+    // manage.display_a_participant_total_by_id(1);
+    // cout << "\n";
+    // manage.display_a_participant_and_a_neighborhood(2,1);
+    // cout << "\n";
+    // manage.display_a_participant_total_by_id(2);
+    // cout << "\n\n";
 
-    manage.display_all_participants_and_their_distance_walks_per_neighborhood();
+    // manage.display_all_participants_and_their_distance_walks_per_neighborhood();
     
     
     // manage.most_active_participant_by_total();

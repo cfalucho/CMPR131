@@ -7,10 +7,11 @@ class Participant{
     public:
         // Default Constructor
         Participant();
-        // Overloaed Constructor
-        Participant(string, int);
+        // Overload Constructor
+        Participant(int, string);
+        Participant(int, string, double[]);
 
-        Participant(Neighborhood);
+        // Participant(Neighborhood);
         // Destructor
         ~Participant();
 

@@ -8,8 +8,11 @@ class Manager{
         Manager();
         Manager(int);
         
-        void add_new_participant(string);
+        
+        
         // setters
+        void add_new_participant(int, string);
+        void add_new_participant(int, string, double[]);
         void set_distance_walk();
         void set_distance_walk_by_neighborhood_id(int, int, double);
 
@@ -21,7 +24,7 @@ class Manager{
         void display_all_participants_and_their_neighborhoods() const;
         void display_all_participants_and_their_distance_walks_per_neighborhood() const;
 
-        // void most_active_participant_by_total() const;
+        Participant* most_active_participant_by_total() const;
     
         private:
         int capacity;

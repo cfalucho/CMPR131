@@ -5,7 +5,7 @@
 const int NEIGHBORHOOD_SIZE = 6;
 string neighborhood_names[NEIGHBORHOOD_SIZE] = {
         "Old Towne",
-        "El Monte",
+        "El Modena",
         "Orange Hills",
         "Santiago Creek",
         "Villa Park Area",
@@ -16,16 +16,30 @@ string neighborhood_names[NEIGHBORHOOD_SIZE] = {
 Participant::Participant(){
     name = "";
 }
-Participant::Participant(string new_participant, int uid){
+
+Participant::Participant(int uid, string new_participant){
     capacity = NEIGHBORHOOD_SIZE;
     id = uid;
-    total_distance = 0.0;
     name = new_participant;
-
+    total_distance = 0.0;
+    
     neighborhoods = new Neighborhood*[capacity];
     for (int index = 0; index < NEIGHBORHOOD_SIZE; index++){
         neighborhoods[index] = new Neighborhood(index + 1, 
                                                 neighborhood_names[index]);
+    }
+}
+
+Participant::Participant(int uid, string new_participant, double distance_walk_arr[]){
+    capacity = NEIGHBORHOOD_SIZE;
+    id = uid;
+    name = new_participant;
+    total_distance = 0.0;
+    
+    neighborhoods = new Neighborhood*[capacity];
+    for (int index = 0; index < NEIGHBORHOOD_SIZE; index++){
+        neighborhoods[index] = new Neighborhood(index + 1, 
+                                                neighborhood_names[index], distance_walk_arr[index]);
     }
 }
 

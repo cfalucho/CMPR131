@@ -8,6 +8,9 @@ class Neighborhood{
         Neighborhood();
         // Overloaded Constructor
         Neighborhood(int, string);
+        Neighborhood(int, string, double);
+    
+
         // Destructor
         ~Neighborhood();
 
@@ -26,5 +29,5 @@ class Neighborhood{
 
         int unique_id;
         string neighborhood_name;
-        double distance_walk;
+        double neighborhood_dist_walk;
 };
