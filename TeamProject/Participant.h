@@ -27,9 +27,8 @@ class Participant{
         string get_neighborhood_name_by_id(int)const;
         double get_distance_walk_by_neighborhood_id(int) const;
         void display_participants_neighborhoods();
-
-
-        Neighborhood** neighborhoods; 
+        Neighborhood** get_neighborhoods();
+        
 
     private:
         int capacity;
@@ -39,7 +38,7 @@ class Participant{
         string name;
         double total_distance;
 
-        // Neighborhood** neighborhoods; 
+        Neighborhood** neighborhoods; 
 
         
 };

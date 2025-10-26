@@ -35,7 +35,12 @@ Participant::Participant(int uid, string new_participant, double distance_walk_a
     id = uid;
     name = new_participant;
     total_distance = 0.0;
+
+    for (int i = 0; i < capacity; i++){
+        total_distance += distance_walk_arr[i];
+    }
     
+
     neighborhoods = new Neighborhood*[capacity];
     for (int index = 0; index < NEIGHBORHOOD_SIZE; index++){
         neighborhoods[index] = new Neighborhood(index + 1, 
@@ -90,4 +95,8 @@ void Participant::display_participants_neighborhoods(){
         cout << neighborhoods[i]->get_neighborhood_unique_id() << ") "
              << neighborhoods[i]->get_neighborhood_name() << ": \t\t" << setw(8);        cout << "\n";
     }
+}
+
+Neighborhood** Participant::get_neighborhoods(){
+    return neighborhoods;
 }

@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Participant.cpp"
-#include "Neighborhood.cpp"
-#include "Manager.cpp"
+#include "Participant.cpp"  // remove for VS code
+#include "Neighborhood.cpp" // remove for VS code
+#include "Manager.cpp"      // remove for VS code
 #include <fstream>
 #include <sstream>
 
@@ -48,6 +48,8 @@ int main(){
         ss >> id >> firstName >> lastName;
         
         cout << id << " " << firstName << " " << lastName << " ";
+        string name; 
+        name = firstName + " " + lastName;
 
         int i = 0;
         // parse the doubles and store into an array
@@ -63,11 +65,12 @@ int main(){
         }    
         cout << endl;
 
-        manage.add_new_participant(id, firstName, distanceWalk);
+        manage.add_new_participant(id, name, distanceWalk);
     }
-
     manage.display_all_participants_and_their_distance_walks_per_neighborhood();
+    cout << endl;
 
+    manage.get_most_participant_by_total();
     
 
 

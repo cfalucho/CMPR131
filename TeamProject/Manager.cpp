@@ -66,7 +66,7 @@ void Manager::set_distance_walk(){
 
 void Manager::set_distance_walk_by_neighborhood_id(int uid, int neighborhood_id, double distance_walk){
     participants[uid].add_to_total_distance(distance_walk);
-    participants[uid].neighborhoods[neighborhood_id]->set_distance_walk_this_neighborhood(distance_walk);
+    participants[uid].get_neighborhoods()[neighborhood_id]->set_distance_walk_this_neighborhood(distance_walk);
 }
 
 void Manager::display_a_participant(int id) const{
@@ -121,15 +121,16 @@ void Manager::display_all_participants_and_their_distance_walks_per_neighborhood
 
         for (int neighborhood_id = 0; neighborhood_id < 6; neighborhood_id++)
         {
-            cout << setw(20) << participants[uid].neighborhoods[neighborhood_id]->get_distance_walk();
-                 
+            cout << setw(20) << participants[uid].get_neighborhoods()[neighborhood_id]->get_distance_walk();                 
         }
         cout << setw(25) << participants[uid].get_total_distance();
         cout << "\n\n";
-
-        // cout << "Most Active Participant of the Day: ";
-                  
+        
     }
+}
+
+void Manager::get_most_participant_by_total() const{
+    cout << "Most Active Participant of the Day: " << most_active_participant_by_total()->get_name();
 }
 
 Participant* Manager::most_active_participant_by_total() const{

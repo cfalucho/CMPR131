@@ -23,7 +23,8 @@ class Manager{
         void display_all_participants()const;
         void display_all_participants_and_their_neighborhoods() const;
         void display_all_participants_and_their_distance_walks_per_neighborhood() const;
-
+        void get_most_participant_by_total() const;
+        
         Participant* most_active_participant_by_total() const;
     
         private:
