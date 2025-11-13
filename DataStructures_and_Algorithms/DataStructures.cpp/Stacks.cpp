@@ -14,8 +14,6 @@ class Stacks{
             if (!isFull()){
                 a[num_of_elements++] = num;   
             }
-            
-
         }
 
         void pop(){

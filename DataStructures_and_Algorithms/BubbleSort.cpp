@@ -12,7 +12,6 @@ int main(){
     for (int i = 0; i < SIZE; i++){
         cout << arr[i] << ", ";
     }
-
 }
 
 void bubbleSort(int arr[], int SIZE){

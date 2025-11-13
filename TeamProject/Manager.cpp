@@ -121,11 +121,10 @@ void Manager::display_all_participants_and_their_distance_walks_per_neighborhood
 
         for (int neighborhood_id = 0; neighborhood_id < 6; neighborhood_id++)
         {
-            cout << setw(20) << participants[uid].get_neighborhoods()[neighborhood_id]->get_distance_walk();                 
+            cout << setw(20) << participants[uid].get_neighborhoods()[neighborhood_id]->get_distance_walk() << " mi.";                 
         }
         cout << setw(25) << participants[uid].get_total_distance();
         cout << "\n\n";
-        
     }
 }
 
@@ -138,7 +137,7 @@ Participant* Manager::most_active_participant_by_total() const{
     {
         int activeParticipantID = 0;
         double highestTotal = participants[0].get_total_distance();
-        for (int i = 1; i < participants->get_size() - 1; i++)
+        for (int i = 1; i < num_of_elements - 1; i++)
         {
             if (participants[i].get_total_distance() > highestTotal)
             {

@@ -1,0 +1,3 @@
+﻿  newTeamProject.cpp
+C:\Users\justi\source\repos\newTeamProject\newTeamProject\newTeamProject.cpp(21,18): warning C4930: 'Neighborhood nDefault(void)': prototyped function not called (was a variable definition intended?)
+  newTeamProject.vcxproj -> C:\Users\justi\source\repos\newTeamProject\x64\Debug\newTeamProject.exe

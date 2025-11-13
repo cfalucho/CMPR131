@@ -134,7 +134,6 @@ void LinkedList::remove(int key)
         noe--;
         delete currPtr;
     }
-
 }
 bool LinkedList::search(int key) const
 {
